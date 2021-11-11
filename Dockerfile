@@ -12,7 +12,7 @@ COPY . /build/
 RUN make
 
 FROM busybox
-LABEL maintainer="Robert Jacob <xperimental@solidproject.de>"
+LABEL maintainer="forked from Robert Jacob <xperimental@solidproject.de>"
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /build/netatmo-exporter /bin/netatmo-exporter

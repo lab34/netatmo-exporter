@@ -95,6 +95,18 @@ var (
 		varLabels,
 		nil)
 
+	rain1HourDesc = prometheus.NewDesc(
+		sensorPrefix+"rain_1hour_amount_mm",
+		"Rain amount in millimeters 1 hour",
+		varLabels,
+		nil)
+
+	rain1DayDesc = prometheus.NewDesc(
+		sensorPrefix+"rain_1day_amount_mm",
+		"Rain amount in millimeters 1 day",
+		varLabels,
+		nil)
+
 	batteryDesc = prometheus.NewDesc(
 		sensorPrefix+"battery_percent",
 		"Battery remaining life (10: low)",
@@ -238,6 +250,14 @@ func (c *NetatmoCollector) collectData(ch chan<- prometheus.Metric, device *neta
 
 	if data.Rain != nil {
 		c.sendMetric(ch, rainDesc, prometheus.GaugeValue, float64(*data.Rain), moduleName, stationName)
+	}
+
+	if data.Rain1Hour != nil {
+		c.sendMetric(ch, rain1HourDesc, prometheus.GaugeValue, float64(*data.Rain1Hour), moduleName, stationName)
+	}
+
+	if data.Rain1Day != nil {
+		c.sendMetric(ch, rain1DayDesc, prometheus.GaugeValue, float64(*data.Rain1Day), moduleName, stationName)
 	}
 
 	if device.BatteryPercent != nil {

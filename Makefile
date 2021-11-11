@@ -23,10 +23,14 @@ build-binary:
 	GOOS=$(GO_OS) GOARCH=$(GO_ARCH) $(GO_CMD) build -tags netgo -ldflags "-w -X main.Version=$(VERSION) -X main.GitCommit=$(GIT_COMMIT)" -o netatmo-exporter .
 
 image:
-	docker build -t "xperimental/netatmo-exporter:$(VERSION)" .
+	podman build -t "lab34/netatmo-exporter:$(VERSION)" .
 
 all-images:
-	docker buildx build -t "ghcr.io/xperimental/netatmo-exporter:$(DOCKER_TAG)" -t "xperimental/netatmo-exporter:$(DOCKER_TAG)" --platform linux/amd64,linux/arm64 --push .
+	podman buildx build -t "lab34/netatmo-exporter:$(DOCKER_TAG)" --platform linux/amd64,linux/arm64 --push .
+
+push: 
+	podman build -t lab34/netatmo-exporter:latest .
+ 	podman push lab34/netatmo-exporter:latest
 
 clean:
 	rm -f netatmo-exporter

@@ -1,4 +1,5 @@
-# netatmo-exporter [![Docker Build Status](https://img.shields.io/docker/cloud/build/xperimental/netatmo-exporter.svg?style=flat-square)](https://hub.docker.com/r/xperimental/netatmo-exporter/)
+# netatmo-exporter (https://hub.docker.com/r/lab34/netatmo-exporter/)
+### This is a fork of https://github.com/xperimental/netatmo-exporter in wich I've add the 1 hour and 1 day rain amount for my own purpose.
 
 Simple [prometheus](https://prometheus.io) exporter for getting sensor values [NetAtmo](https://www.netatmo.com) sensors into prometheus.
 
@@ -8,8 +9,7 @@ Simple [prometheus](https://prometheus.io) exporter for getting sensor values [N
 
 The exporter is available as a Docker image both on DockerHub and GitHub:
 
-- [`xperimental/netatmo-exporter`](https://hub.docker.com/r/xperimental/netatmo-exporter/)
-- [`ghcr.io/xperimental/netatmo-exporter:1.3.0`](https://github.com/xperimental/netatmo-exporter/pkgs/container/netatmo-exporter)
+- [`lab34/netatmo-exporter`](https://hub.docker.com/r/lab34/netatmo-exporter/)
 
 The `latest` tag is built from the current master, tags tagged since the Docker support was added are also available as a tag in Docker.
 
