@@ -1,5 +1,6 @@
-# netatmo-exporter (https://hub.docker.com/r/lab34/netatmo-exporter/)
-### This is a fork of https://github.com/xperimental/netatmo-exporter in wich I've add the 1 hour and 1 day rain amount for my own purpose.
+# netatmo-exporter [![Docker Build Status](https://img.shields.io/docker/cloud/build/lab34/netatmo-exporter.svg?style=flat-square)](https://hub.docker.com/r/lab34/netatmo-exporter/)
+
+### This is a fork of https://github.com/xperimental/netatmo-exporter in which I've add the 1 hour and 1 day rain amount for my own purpose.
 
 Simple [prometheus](https://prometheus.io) exporter for getting sensor values [NetAtmo](https://www.netatmo.com) sensors into prometheus.
 
